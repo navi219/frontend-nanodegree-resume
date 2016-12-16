@@ -1,10 +1,3 @@
-var formattedName = HTMLheaderName.replace("%data%", "Daniel Maron")
-var formattedRole = HTMLheaderRole.replace("%data%", "IT Dilettante")
-var formattedEmail = HTMLemail.replace("%data%", "maron.daniel@gmail.com")
-var formattedbioPic = HTMLbioPic.replace("%data%", "images/fry.jpg")
-var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", "I'm the One the prophecy foretold.")
-var formattedSkills = HTMLskills.replace("%data%", "This, That, and the Other Things")
-
 var bio = {
 	"name": "Daniel Maron",
 	"role": "IT Dilettante",
@@ -29,7 +22,7 @@ var education = {
 		"major": "Sociology",
 		"minor": "Communication",
 		"years": "1989-1993",
-		"URL": "www.google.com"
+		"url": "www.google.com"
 	},
 	{
 		"school": "Googball U",
@@ -37,17 +30,36 @@ var education = {
 		"major": "Bribery",
 		"minor": ["Subterfuge","Con Art History"],
 		"years": "1977-1983",
-		"URL": "www.disinfo.com"
+		"url": "www.disinfo.com"
 	}
 ]
 }
 
- $("#main").append([bio.name]);
- $("#main").append([bio.role]);
- $("#main").append([bio.email]);
- $("#main").append([bio.bioPic]);
- $("#main").append([bio.welcomeMsg]);
- $("#main").append([bio.skills]);
-
- $("#main").append(work["position"]);
- $("#main").append([education.name]);
+var projects = {
+	"websites": [
+		{
+			"name": "Fizzbat",
+			"url": "www.fizzbat.com",
+			"role": "Senior Designer",
+			"years": "1997"
+		},
+		{
+			"name": "Dorfbing",
+			"url": "www.dorfbingreal.com",
+			"role": "Tester",
+			"years": "1999"
+		}
+		],
+	"movies": [
+		{
+			"name": "Ugly Monkey",
+			"year": "2013",
+			"role": "Directory"
+		},
+		{
+			"name": "Formika",
+			"year": "2011",
+			"role": "Actor"
+		}
+		]
+}
