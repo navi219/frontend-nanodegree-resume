@@ -21,10 +21,26 @@ var work = {
 	"city": "Ralleigh"
 }
 
-var education = {}
-	education["name"] = "UNC"
-	education["years"] = "1989-1993"
-	education["city"] = "Springfield"
+var education = {
+	"schools": [
+	{
+		"school": "UNC",
+		"city": "Springfield",
+		"major": "Sociology",
+		"minor": "Communication",
+		"years": "1989-1993",
+		"URL": "www.google.com"
+	},
+	{
+		"school": "Googball U",
+		"city": "Nome",
+		"major": "Bribery",
+		"minor": ["Subterfuge","Con Art History"],
+		"years": "1977-1983",
+		"URL": "www.disinfo.com"
+	}
+]
+}
 
  $("#main").append([bio.name]);
  $("#main").append([bio.role]);
