@@ -63,3 +63,24 @@ var projects = {
 		}
 		]
 }
+
+//Name
+var formattedName = HTMLheaderName.replace("%data%", bio.name)
+$("#header").append(formattedName);
+
+
+//Skills
+var formattedSkill = "";
+function arrayToHTML(index,arr) {
+	formattedSkill = HTMLskills.replace("%data%", arr[index]);
+	$("#skills").append(formattedSkill);
+}
+
+if (bio.skills.length > 0) {
+	$("#header").append(HTMLskillsStart);
+
+	for (var i = 0, len = bio.skills.length; i < len; i++) {
+  	arrayToHTML(i,bio.skills);
+	}
+}
+
