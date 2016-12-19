@@ -81,6 +81,27 @@ var projects = {
 }
 
 //Name
+
+var nameIsInt = -1;
+
+function inName() {
+    var newName = bio.name.split(" ");
+
+if (nameIsInt < 0) {
+    newName[0] = newName[0].charAt(0).toUpperCase() + newName[0].substr(1).toLowerCase();
+    
+    newName[1] = newName[1].toUpperCase();
+    
+    }
+
+
+ 	newName = newName.join(' ');
+
+ 	nameIsInt = nameIsInt * (-1);
+
+    return newName;
+}
+
 var formattedName = HTMLheaderName.replace("%data%", bio.name)
 var formattedBioPic = HTMLbioPic.replace("%data%", "images/fry.jpg")
 var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", "Doing All The Things")
@@ -126,3 +147,8 @@ for (position in work.positions) {
 }
 
 displayWork();
+
+
+
+
+$("#main").append(internationalizeButton);
