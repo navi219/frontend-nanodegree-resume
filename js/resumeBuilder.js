@@ -8,10 +8,26 @@ var bio = {
 }
 
 var work = {
-	"position": "IT Support Specialist",
-	"employer": "FacelessCorp",
-	"tenure": 13,
-	"city": "Ralleigh"
+	"positions": [
+		{	"title": "Senior IT Support Specialist",
+			"employer": "FacelessCorp",
+			"dates": "2005 - Present",
+			"city": "Ralleigh",
+			"desc": "Led a team of evil geniuses to develop scathing comebacks on social media. Managed team conflict by basing bonuses on team success."
+		},
+		{	"title": "Field Services",
+			"employer": "Brogovingian",
+			"dates": "2003 - 2005",
+			"city": "Temple",
+			"desc": "Leveled the playing field for all interested parties. Maximized ROI by leveraging distributed resources in a globalized context. Yay me."
+		},
+		{	"title": "Traffic Pylon",
+			"employer": "Road",
+			"dates": "1999",
+			"city": "Topeka",
+			"desc": "All work and no play made Jack a dull boy. All work and no play made Jack a dull boy. All work and no play made Jack a dull boy. All work and no play made Jack a dull boy. All work and no play made Jack a dull boy. All work and no play made Jack a dull boy. All work and no play made Jack a dull boy. All work and no play made Jack a dull boy."
+		}
+	]
 }
 
 var education = {
@@ -66,21 +82,45 @@ var projects = {
 
 //Name
 var formattedName = HTMLheaderName.replace("%data%", bio.name)
+var formattedBioPic = HTMLbioPic.replace("%data%", "images/fry.jpg")
+var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", "Doing All The Things")
+
 $("#header").append(formattedName);
+$("#header").append(formattedWelcomeMsg);
+$("#header").prepend(formattedBioPic);
 
 
 //Skills
 var formattedSkill = "";
-function arrayToHTML(index,arr) {
-	formattedSkill = HTMLskills.replace("%data%", arr[index]);
-	$("#skills").append(formattedSkill);
-}
 
 if (bio.skills.length > 0) {
 	$("#header").append(HTMLskillsStart);
+	for (var i in bio.skills) {
+  		formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+		$("#skills").append(formattedSkill);
+	}
+}
 
-	for (var i = 0, len = bio.skills.length; i < len; i++) {
-  	arrayToHTML(i,bio.skills);
+
+//Work
+var formattedEmployer = ""
+var formattedTitle = ""
+var formattedWorkDates = ""
+var formattedWorkkDesc = ""
+
+
+for (position in work.positions) {
+	if (work.positions.hasOwnProperty(position)) {
+		$("#workExperience").append(HTMLworkStart);
+		//console.log("Position: " + j);
+		formattedEmployer = HTMLworkEmployer.replace("%data%", work.positions[position].employer);
+		formattedTitle = HTMLworkTitle.replace("%data%", work.positions[position].title);
+		formattedWorkDates = HTMLworkDates.replace("%data%", work.positions[position].dates);
+		formattedWorkkDesc = HTMLworkDescription.replace("%data%", work.positions[position].desc);
+
+		$(".work-entry:last").append(formattedEmployer + formattedTitle);
+		$(".work-entry:last").append(formattedWorkDates);
+		$(".work-entry:last").append(formattedWorkkDesc);
 	}
 }
 
