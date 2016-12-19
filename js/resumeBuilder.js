@@ -108,7 +108,7 @@ var formattedTitle = ""
 var formattedWorkDates = ""
 var formattedWorkkDesc = ""
 
-
+function displayWork() {
 for (position in work.positions) {
 	if (work.positions.hasOwnProperty(position)) {
 		$("#workExperience").append(HTMLworkStart);
@@ -123,4 +123,6 @@ for (position in work.positions) {
 		$(".work-entry:last").append(formattedWorkkDesc);
 	}
 }
+}
 
+displayWork();
