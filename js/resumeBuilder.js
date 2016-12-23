@@ -52,30 +52,43 @@ var education = {
 }
 
 var projects = {
-	"websites": [
+	"project": [
 		{
 			"name": "Fizzbat",
 			"url": "www.fizzbat.com",
 			"role": "Senior Designer",
-			"years": "1997"
+			"years": "1997",
+			"desc": "Big deal, big deals, the best deals. Leveraged incredible resources to do fantastic things. So good.",
+			"image": "buddhasm.gif"
 		},
 		{
 			"name": "Dorfbing",
 			"url": "www.dorfbingreal.com",
 			"role": "Tester",
-			"years": "1999"
-		}
-		],
-	"movies": [
+			"years": "1999",
+			"desc": "If you have to ask you'll never know. If you have to ask you'll never know. If you have to ask you'll never know. \
+			If you have to ask you'll never know. If you have to ask you'll never know. If you have to ask you'll never know. \
+			If you have to ask you'll never know. If you have to ask you'll never know.",
+			"image": "rocksm.gif"
+		},
 		{
 			"name": "Ugly Monkey",
-			"year": "2013",
-			"role": "Directory"
+			"years": "2013",
+			"role": "Director",
+			"desc": "All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play \
+			makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. \
+			All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes \
+			Jack a dull boy. All work and no play makes Jack a dull boy.",
+			"image": "contactsm.gif"
 		},
 		{
 			"name": "Formika",
-			"year": "2011",
-			"role": "Actor"
+			"years": "2011",
+			"role": "Actor",
+			"desc": "NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE \
+			NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE \
+			NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE",
+			"image": "bmansm.gif"
 		}
 		]
 }
@@ -149,6 +162,36 @@ for (position in work.positions) {
 displayWork();
 
 
+// Projects
+projects.display = function() {
 
+	var formattedProjectTitle = ""
+	var formattedProjectDates = ""
+	var formattedProjectDesc = ""
+	var formattedProjectImage = ""
+	var tmpImage = ""
+
+	for (proj in projects.project) {
+
+		if (projects.project.hasOwnProperty(proj)) {
+
+		formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.project[proj].name)
+		formattedProjectDates = HTMLprojectDates.replace("%data%", projects.project[proj].dates)
+		formattedProjectDesc = HTMLprojectDescription.replace("%data%", projects.project[proj].desc)
+		tmpImage = "images/" + projects.project[proj].image
+		formattedProjectImage = HTMLprojectImage.replace("%data%", tmpImage)
+
+
+
+		$("#projects").append(HTMLprojectStart);
+		$(".project-entry:last").append(formattedProjectTitle);
+		$(".project-entry:last").append(formattedProjectDates);
+		$(".project-entry:last").append(formattedProjectDesc);
+		$(".project-entry:last").append(formattedProjectImage);
+		}
+	}
+}
+
+projects.display();
 
 $("#main").append(internationalizeButton);
