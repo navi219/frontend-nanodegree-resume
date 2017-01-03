@@ -1,30 +1,31 @@
 var bio = {
 	"name": "Daniel Maron",
 	"role": "IT Dilettante",
-	"email": "maron.daniel@gmail.com",
 	"bioPic": "images/fry.jpg",
 	"welcomeMsg": "I'm the One the prophecy foretold.",
-	"skills": ["This", "That", "The Other Thing"]
+	"skills": ["This", "That", "The Other Thing"],
+	"contacts": {"email": "test@test.com", "mobile": "555-444-5435", "twitter": "@yourface", "location": "Columbus, OH"}
 }
 
+
 var work = {
-	"positions": [
+	"jobs": [
 		{	"title": "Senior IT Support Specialist",
 			"employer": "FacelessCorp",
 			"dates": "2005 - Present",
-			"city": "Ralleigh",
+			"location": "Ralleigh, VA",
 			"desc": "Led a team of evil geniuses to develop scathing comebacks on social media. Managed team conflict by basing bonuses on team success."
 		},
 		{	"title": "Field Services",
 			"employer": "Brogovingian",
 			"dates": "2003 - 2005",
-			"city": "Temple",
+			"location": "Temple, AZ",
 			"desc": "Leveled the playing field for all interested parties. Maximized ROI by leveraging distributed resources in a globalized context. Yay me."
 		},
 		{	"title": "Traffic Pylon",
 			"employer": "Road",
 			"dates": "1999",
-			"city": "Topeka",
+			"location": "Topeka, KS",
 			"desc": "All work and no play made Jack a dull boy. All work and no play made Jack a dull boy. All work and no play made Jack a dull boy. All work and no play made Jack a dull boy. All work and no play made Jack a dull boy. All work and no play made Jack a dull boy. All work and no play made Jack a dull boy. All work and no play made Jack a dull boy."
 		}
 	]
@@ -34,7 +35,7 @@ var education = {
 	"schools": [
 	{
 		"school": "UNC",
-		"city": "Springfield",
+		"location": "Springfield, IL",
 		"major": "Sociology",
 		"minor": "Communication",
 		"years": "1989-1993",
@@ -42,7 +43,7 @@ var education = {
 	},
 	{
 		"school": "Googball U",
-		"city": "Nome",
+		"location": "Nome, AK",
 		"major": "Bribery",
 		"minor": ["Subterfuge","Con Art History"],
 		"years": "1977-1983",
@@ -124,6 +125,18 @@ $("#header").append(formattedWelcomeMsg);
 $("#header").prepend(formattedBioPic);
 
 
+
+//Contact
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email)
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile)
+var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter)
+
+$("#topContacts").append(formattedEmail);
+$("#topContacts").append(formattedMobile);
+$("#topContacts").append(formattedTwitter);
+
+
+
 //Skills
 var formattedSkill = "";
 
@@ -143,14 +156,14 @@ var formattedWorkDates = ""
 var formattedWorkkDesc = ""
 
 function displayWork() {
-for (position in work.positions) {
-	if (work.positions.hasOwnProperty(position)) {
+for (position in work.jobs) {
+	if (work.jobs.hasOwnProperty(position)) {
 		$("#workExperience").append(HTMLworkStart);
 		//console.log("Position: " + j);
-		formattedEmployer = HTMLworkEmployer.replace("%data%", work.positions[position].employer);
-		formattedTitle = HTMLworkTitle.replace("%data%", work.positions[position].title);
-		formattedWorkDates = HTMLworkDates.replace("%data%", work.positions[position].dates);
-		formattedWorkkDesc = HTMLworkDescription.replace("%data%", work.positions[position].desc);
+		formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[position].employer);
+		formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[position].title);
+		formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[position].dates);
+		formattedWorkkDesc = HTMLworkDescription.replace("%data%", work.jobs[position].desc);
 
 		$(".work-entry:last").append(formattedEmployer + formattedTitle);
 		$(".work-entry:last").append(formattedWorkDates);
@@ -191,6 +204,11 @@ projects.display = function() {
 		}
 	}
 }
+
+//Map
+
+$("#mapDiv").append(googleMap);
+
 
 projects.display();
 
