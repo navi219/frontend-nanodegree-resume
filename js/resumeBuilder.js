@@ -1,95 +1,106 @@
 var bio = {
 	"name": "Daniel Maron",
 	"role": "IT Dilettante",
-	"bioPic": "images/fry.jpg",
+	"contacts": {
+		"mobile": "555-444-5435",
+		"email": "test@test.com",
+		"github": "https://github.com/navi219",
+		"twitter": "@yourface",
+		"location": "Columbus, OH"
+	},
 	"welcomeMsg": "I'm the One the prophecy foretold.",
 	"skills": ["This", "That", "The Other Thing"],
-	"contacts": {"email": "test@test.com", "mobile": "555-444-5435", "twitter": "@yourface", "location": "Columbus, OH"}
+	"bioPic": "images/fry.jpg"
+}
+
+var education = {
+	"schools": [
+		{	"name": "UNC",
+			"location": "Springfield, IL",
+			"degree": "B.A.",
+			"majors": "Communication",
+			"dates": 1993,
+			"url": "www.google.com"
+		},
+		{	"name": "Googball U",
+			"location": "Nome, AK",
+			"degree": "B.S.",
+			"majors": "Bribery",
+			"dates": 1983,
+			"url": "www.disinfo.com"
+		}
+		],
+	"onlineCourses": [
+		{	"title": "Online Fun Party Class",
+			"school": "U of Phoenix",
+			"date": 2016,
+			"url": "http://www.phoboes.com"
+		}
+	]
 }
 
 
 var work = {
 	"jobs": [
-		{	"title": "Senior IT Support Specialist",
-			"employer": "FacelessCorp",
-			"dates": "2005 - Present",
+		{	"employer": "FacelessCorp",
+			"title": "Senior IT Support Specialist",
 			"location": "Charlotte, VA",
-			"desc": "Led a team of evil geniuses to develop scathing comebacks on social media. Managed team conflict by basing bonuses on team success."
+			"dates": "2005 - Present",
+			"description": "Led a team of evil geniuses to develop scathing comebacks on social media. Managed team conflict by basing bonuses on team success."
 		},
-		{	"title": "Field Services",
-			"employer": "Brogovingian",
-			"dates": "2003 - 2005",
+		{	"employer": "Brogovingian",
+			"title": "Field Services",
 			"location": "Temple, AZ",
-			"desc": "Leveled the playing field for all interested parties. Maximized ROI by leveraging distributed resources in a globalized context. Yay me."
+			"dates": "2003 - 2005",
+			"description": "Leveled the playing field for all interested parties. Maximized ROI by leveraging distributed resources in a globalized context. Yay me."
 		},
-		{	"title": "Traffic Pylon",
-			"employer": "Road",
-			"dates": "1999",
+		{	"employer": "Road",
+			"title": "Traffic Pylon",
 			"location": "Topeka, KS",
-			"desc": "All work and no play made Jack a dull boy. All work and no play made Jack a dull boy. All work and no play made Jack a dull boy. All work and no play made Jack a dull boy. All work and no play made Jack a dull boy. All work and no play made Jack a dull boy. All work and no play made Jack a dull boy. All work and no play made Jack a dull boy."
+			"dates": "1999",
+			"description": "All work and no play made Jack a dull boy. All work and no play made Jack a dull boy. All work and no play made Jack a dull boy. All work and no play made Jack a dull boy. All work and no play made Jack a dull boy. All work and no play made Jack a dull boy. All work and no play made Jack a dull boy. All work and no play made Jack a dull boy."
 		}
 	]
-}
-
-var education = {
-	"schools": [
-	{
-		"school": "UNC",
-		"location": "Springfield, IL",
-		"major": "Sociology",
-		"minor": "Communication",
-		"years": "1989-1993",
-		"url": "www.google.com"
-	},
-	{
-		"school": "Googball U",
-		"location": "Nome, AK",
-		"major": "Bribery",
-		"minor": ["Subterfuge","Con Art History"],
-		"years": "1977-1983",
-		"url": "www.disinfo.com"
-	}
-]
 }
 
 var projects = {
 	"project": [
 		{
-			"name": "Fizzbat",
+			"title": "Fizzbat",
 			"url": "www.fizzbat.com",
 			"role": "Senior Designer",
-			"years": "1997",
-			"desc": "Big deal, big deals, the best deals. Leveraged incredible resources to do fantastic things. So good.",
-			"image": "buddhasm.gif"
+			"dates": "1997",
+			"description": "Big deal, big deals, the best deals. Leveraged incredible resources to do fantastic things. So good.",
+			"images": ["buddhasm.gif"]
 		},
 		{
-			"name": "Dorfbing",
+			"title": "Dorfbing",
 			"url": "www.dorfbingreal.com",
 			"role": "Tester",
-			"years": "1999",
-			"desc": "If you have to ask you'll never know. If you have to ask you'll never know. If you have to ask you'll never know. \
+			"dates": "1999",
+			"description": "If you have to ask you'll never know. If you have to ask you'll never know. \
 			If you have to ask you'll never know. If you have to ask you'll never know. If you have to ask you'll never know. \
 			If you have to ask you'll never know. If you have to ask you'll never know.",
-			"image": "rocksm.gif"
+			"images": ["rocksm.gif"]
 		},
 		{
-			"name": "Ugly Monkey",
-			"years": "2013",
+			"title": "Ugly Monkey",
+			"dates": "2012 - 2013",
 			"role": "Director",
-			"desc": "All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play \
+			"description": "All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play \
 			makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. \
 			All work and no play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work and no play makes \
 			Jack a dull boy. All work and no play makes Jack a dull boy.",
-			"image": "contactsm.gif"
+			"images": ["contactsm.gif", "dragsm.gif"]
 		},
 		{
-			"name": "Formika",
-			"years": "2011",
+			"title": "Formika",
+			"dates": "2011 - present",
 			"role": "Actor",
-			"desc": "NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE \
+			"description": "NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE \
 			NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE \
 			NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE NOPE",
-			"image": "bmansm.gif"
+			"images": ["bmansm.gif"]
 		}
 		]
 }
@@ -163,7 +174,7 @@ for (position in work.jobs) {
 		formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[position].employer);
 		formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[position].title);
 		formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[position].dates);
-		formattedWorkkDesc = HTMLworkDescription.replace("%data%", work.jobs[position].desc);
+		formattedWorkkDesc = HTMLworkDescription.replace("%data%", work.jobs[position].description);
 
 		$(".work-entry:last").append(formattedEmployer + formattedTitle);
 		$(".work-entry:last").append(formattedWorkDates);
@@ -182,18 +193,21 @@ projects.display = function() {
 	var formattedProjectDates = ""
 	var formattedProjectDesc = ""
 	var formattedProjectImage = ""
-	var tmpImage = ""
+	var imgArray = []
 
 	for (proj in projects.project) {
 
 		if (projects.project.hasOwnProperty(proj)) {
 
-		formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.project[proj].name)
+		formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.project[proj].title)
 		formattedProjectDates = HTMLprojectDates.replace("%data%", projects.project[proj].dates)
-		formattedProjectDesc = HTMLprojectDescription.replace("%data%", projects.project[proj].desc)
-		tmpImage = "images/" + projects.project[proj].image
-		formattedProjectImage = HTMLprojectImage.replace("%data%", tmpImage)
-
+		formattedProjectDesc = HTMLprojectDescription.replace("%data%", projects.project[proj].description)
+		
+		projects.project[proj].images.forEach(function(img){
+			var tmpImage = "images/" + img;
+			formattedProjectImage = HTMLprojectImage.replace("%data%", tmpImage);
+			imgArray.push(formattedProjectImage);
+			});	
 
 
 		$("#projects").append(HTMLprojectStart);
