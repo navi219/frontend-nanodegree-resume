@@ -13,7 +13,7 @@ var work = {
 		{	"title": "Senior IT Support Specialist",
 			"employer": "FacelessCorp",
 			"dates": "2005 - Present",
-			"location": "Ralleigh, VA",
+			"location": "Charlotte, VA",
 			"desc": "Led a team of evil geniuses to develop scathing comebacks on social media. Managed team conflict by basing bonuses on team success."
 		},
 		{	"title": "Field Services",
