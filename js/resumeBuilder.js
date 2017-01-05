@@ -1,3 +1,7 @@
+/* BEGIN DATA DECLARATION */
+
+
+// Bio and contact information
 var bio = {
 	"name": "Daniel Maron",
 	"role": "IT Dilettante",
@@ -14,6 +18,7 @@ var bio = {
 	display: function() {
 
 		var formattedName = HTMLheaderName.replace("%data%", bio.name)
+		var formattedRole = HTMLheaderRole.replace("%data%", bio.role)
 		var formattedBioPic = HTMLbioPic.replace("%data%", "images/fry.jpg")
 		var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", "Doing All The Things")
 		var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email)
@@ -22,9 +27,11 @@ var bio = {
 		var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter)
 		var formattedSkill = "";
 
-		$("#header").append(formattedName);
+		
+		$("#header").prepend(formattedRole);
+		$("#header").prepend(formattedName);
 		$("#header").append(formattedWelcomeMsg);
-		$("#header").prepend(formattedBioPic);
+		$("#header").append(formattedBioPic);
 
 		$("#topContacts").append(formattedEmail);
 		$("#topContacts").append(formattedGithub);
@@ -40,6 +47,7 @@ var bio = {
 	}
 }
 
+// Education
 var education = {
 	"schools": [
 		{	"name": "UNC",
@@ -113,7 +121,7 @@ var education = {
 	}
 }
 
-
+// Work history
 var work = {
 	"jobs": [
 		{	"employer": "FacelessCorp",
@@ -157,6 +165,7 @@ var work = {
 	}
 }
 
+// Projects
 var projects = {
 	"project": [
 		{
@@ -224,34 +233,34 @@ var projects = {
 	}
 }
 
-//Internationalize button
+/* END DATA DECLARATION */
+
+
+// Function to internationalize name
 var nameIsInt = -1;
 
 function inName() {
-    var newName = bio.name.split(" ");
+	var newName = bio.name.split(" ");
 
-if (nameIsInt < 0) {
-    newName[0] = newName[0].charAt(0).toUpperCase() + newName[0].substr(1).toLowerCase();
-    
-    newName[1] = newName[1].toUpperCase();
-    
-    }
+	if (nameIsInt < 0) {
+	newName[0] = newName[0].charAt(0).toUpperCase() + newName[0].substr(1).toLowerCase();
+	newName[1] = newName[1].toUpperCase();
+	}
 
-
- 	newName = newName.join(' ');
-
- 	nameIsInt = nameIsInt * (-1);
-
-    return newName;
+	newName = newName.join(' ');
+	nameIsInt = nameIsInt * (-1);
+	return newName;
 }
 
+// Display main sections
 bio.display();
 work.display();
 projects.display();
 education.display();
 
 
-//Map
+// Display map div
 $("#mapDiv").append(googleMap);
 
+// Display Internationalize button
 $("#main").append(internationalizeButton);
